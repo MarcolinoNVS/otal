@@ -1,0 +1,70 @@
+/* Defina as cores do site */
+body {
+  background-color: rgb(158, 158, 158);
+  color: rgb(2, 2, 2);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+nav ul {
+  background-color: black;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(206, 206, 206);
+}
+
+main {
+  padding: 20px;
+}
+
+.black-section {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 20px;
+}
+
+.blue-section {
+  background-color: rgb(4, 61, 218);
+  color: white;
+  padding: 20px;
+}
+
+.white-section {
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Aqui você pode adicionar estilos para a seção de contato */
+.contact-section {
+  background-color: #bababa; /* Cor de fundo branca */
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Borda cinza clara */
+}
+
+.contact-section h1 {
+  color: #000000; /* Cor do texto preta */
+}
