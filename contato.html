@@ -29,10 +29,28 @@
       <div id="lft">
         <div class="article">
           <h2 class="title">Entre em Contato</h2>
-          <p>
-            Você pode entrar em contato comigo pelo seguinte endereço de e-mail:
-            <a href="mailto:marcos4850@gmail.com">marcos4850@gmail.com</a>.
-          </p>
+          <p>Use o formulário abaixo para entrar em contato conosco:</p>
+        </div>
+
+        <!-- Formulário de Contato -->
+        <div class="form-container" style="margin: 0 0px">
+          <form action="processar_formulario.php" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="4"
+              required
+            ></textarea>
+
+            <button type="submit">Enviar</button>
+          </form>
         </div>
       </div>
       <!-- Resto do seu conteúdo -->
@@ -41,8 +59,8 @@
       <span class="copyright">Copyright &copy; Marcolino</span>
       <span class="credit"
         >Criado por
-        <a href="index.html"
-          ><a href="https://www.instagram.com/marcolino.simpsons/">
+        <a href="index.html">
+          <a href="https://www.instagram.com/marcolino.simpsons/">
             <img
               src="images/instagram.jpg"
               alt="Instagram"
@@ -56,8 +74,10 @@
               alt="Linkedin"
               width="13"
               height="13"
-            /> </a></a
-      ></span>
+            />
+          </a>
+        </a>
+      </span>
     </div>
   </body>
 </html>
