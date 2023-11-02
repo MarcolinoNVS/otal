@@ -245,3 +245,33 @@ body {
 .footer .credit a:hover {
   text-decoration: none;
 }
+/* Estilo para a caixa de contato */
+.form-container {
+  background-color: #fff; 
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 70%; 
+  margin: 0 auto; 
+  margin-top: 20px; 
+}
+
+/* Estilo para os campos do formulário */
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para o botão de envio */
+.form-container button {
+  background-color: #444;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
