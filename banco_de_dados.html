@@ -31,6 +31,7 @@
           <div class="rss">
           <a href="#"><img src="images/rss.gif" alt="" /></a>
         </div>
+      </div>
     <div id="container">
       <div id="lft">
         <h1>Bancos de Dados</h1>
@@ -78,8 +79,8 @@
               propriedades dos objetos que serão usados para armazenar e
               gerenciar dados.<br /><br />Exemplo<br />
               <br />
-              CREATE DATABASE <code>&lt;nome_do_banco&gt;</code><br>
-              CREATE TABLE <code>&lt;tabela> ( <code>&lt;campo1> &lt;tipo>,
+              CREATE DATABASE &lt;nome_do_banco<br>
+              CREATE TABLE &lt;tabela> ( &lt;campo1> &lt;tipo>,
                 [..., &lt;campon> &lt;tipo>]
                 PRIMARY KEY &lt;coluna>
                 FOREIGN KEY &lt;coluna> REFERENCES &lt;tabela_ref>(&lt;coluna_ref>) ) <br><br>
@@ -91,7 +92,7 @@
                 ● Script para criação do banco Sistema de Taxi
                 <button onclick="toggleSpoiler('scriptSpoiler')">Script</button>
                 <div class="spoiler-content" id="scriptSpoiler"><br>CREATE DATABASE sistema_taxi USE sistema_taxi<br><br>
-                    CREATE TABLE cliente( id VARCHAR(4), nome VARCHAR(80), PRIMARY KEY(id)
+                    CREATE TABLE cliente(<br> id VARCHAR(4),<br> nome VARCHAR(80),<br> PRIMARY KEY(id)
                     );<br><br>
                     CREATE TABLE cliente_particular(<br>
                     id VARCHAR(4),<br>
