@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bancos de Dados</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+      .spoiler-content {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      <!-- Seu conteúdo do cabeçalho aqui -->
+    </div>
+    <div id="container">
+      <div id="lft">
+        <h1>Bancos de Dados</h1>
+        <p>
+          Este curso está dividido em quatro módulos:<br /><br />
+
+          1 - Linguagem de Definição de Dados (DDL)<br />
+
+          Aprenda a definir esquemas de relação, excluir relações e modificar
+          esquemas de banco de dados.<br /><br />
+          2 - Linguagem de Manipulação de Dados (DML)<br />
+
+          Domine as habilidades para inserir, excluir e modificar dados, bem
+          como a linguagem de consulta. A linguagem de consulta é inspirada na
+          Álgebra Relacional.<br /><br />
+          3 - Linguagem de Controle de Dados (DCL)<br />
+
+          Explore como gerenciar aspectos de controle de acesso entre usuários e
+          os dados no banco de dados.<br /><br />
+          4 - Linguagem de Transação de Dados (DTL)<br />
+
+          Adquira conhecimento sobre o gerenciamento de aspectos relacionados a
+          transações de dados.
+        </p>
+
+        <!-- Botões de spoiler -->
+        <button onclick="toggleSpoiler('spoiler1')">DDL</button>
+        <div class="spoiler-content" id="spoiler1">
+          <ul>
+            <li>Objetos</li>
+            <li>Esquemas (Banco de dados)</li>
+            <li>Tabela (Relação)</li>
+            <li>Visões (views)</li>
+            <li>Asserções</li>
+            <li>Gatilhos (triggers)</li>
+            <li>Paralelos com Modelo Relacional</li>
+            <li>Tabela = Relação</li>
+            <li>Linha = Tupla</li>
+            <li>Coluna = Atributo</li><br>
+            <button onclick="toggleSpoiler('createSpoiler')">CREATE</button>
+            <div class="spoiler-content" id="createSpoiler"><br>
+              O comando `CREATE` é usado para criar objetos dentro de um banco
+              de dados, como tabelas, índices, visões, procedimentos armazenados
+              e muito mais. Ele permite que você defina a estrutura e as
+              propriedades dos objetos que serão usados para armazenar e
+              gerenciar dados.<br /><br />Exemplo<br />
+              <br />
+              CREATE DATABASE <code>&lt;nome_do_banco&gt;</code><br>
+              CREATE TABLE <code>&lt;tabela> ( <code>&lt;campo1> &lt;tipo>,
+                [..., &lt;campon> &lt;tipo>]
+                PRIMARY KEY &lt;coluna>
+                FOREIGN KEY &lt;coluna> REFERENCES &lt;tabela_ref>(&lt;coluna_ref>) ) <br><br>
+                PRIMARY KEY: Restrição de chave primária
+                FOREIGN KEY: Restrição de chave estrangeira
+                Tipos de Domínios Básicos: char(n), varchar(n), int, real, double, float, boolean, date, etc.
+                Outras Restrições: NOT NULL, UNIQUE, CHECK<br> <br>
+                <img src="bancodedados/bancodll1.png" alt="Sistema de taxi" width="968" height="272"> <br> <br>
+                ● Script para criação do banco Sistema de Taxi
+                <button onclick="toggleSpoiler('scriptSpoiler')">Script</button>
+                <div class="spoiler-content" id="scriptSpoiler"><br>CREATE DATABASE sistema_taxi USE sistema_taxi<br><br>
+                    CREATE TABLE cliente( id VARCHAR(4), nome VARCHAR(80), PRIMARY KEY(id)
+                    );<br><br>
+                    CREATE TABLE cliente_particular(<br>
+                    id VARCHAR(4),<br>
+                    cpf VARCHAR(14),<br>
+                    PRIMARY KEY(id),<br>
+                    FOREIGN KEY(id) REFERENCES cliente(id) );<br><br>
+                    CREATE TABLE cliente_empresa( id VARCHAR(4),<br>
+                    cnpj VARCHAR(18),<br>
+                    PRIMARY KEY(id),<br>
+                    FOREIGN KEY(id) REFERENCES cliente(id) );<br><br>
+                    CREATE TABLE taxi (<br> placa VARCHAR(7),<br> marca VARCHAR(30),<br> modelo VARCHAR(30),<br> anofab INTEGER,<br> PRIMARY KEY(placa)<br>
+                    );<br><br>
+                    CREATE TABLE corrida (<br>
+                    cliid VARCHAR(4),<br>
+                    placa VARCHAR(7),<br>
+                    dataPedido DATE,<br>
+                    PRIMARY KEY(cliid,<br> placa, dataPedido),<br> FOREIGN KEY(cliid) REFERENCES cliente(id),<br> FOREIGN KEY(placa) REFERENCES taxi(placa)</div>
+
+                    <br><br><br><br>
+            </div>
+
+            <button onclick="toggleSpoiler('alterSpoiler')">ALTER</button>
+            <div class="spoiler-content" id="alterSpoiler"><br>
+              O comando `ALTER` é usado para fazer alterações em objetos que já
+              existem no banco de dados. Isso pode incluir adicionar, remover ou
+              modificar colunas em uma tabela, alterar as propriedades de uma
+              visão ou procedimento armazenado, entre outras ações.<br><br>
+              Exemplo<br><br>
+              ALTER TABLE &lt;tabela> ADD &lt;coluna>&lt;tipo> <br>
+              ALTER TABLE &lt;tabela> DROP &lt;coluna>&lt;/coluna><br>
+              Adicionar/remover nova coluna <br>
+              Exemplos<br>
+              ALTER TABLE cliente_particular ADD email varchar(255)<br> ALTER TABLE cliente_particular DROP email<br>
+              
+            </div>
+
+            <button onclick="toggleSpoiler('dropSpoiler')">DROP</button>
+            <div class="spoiler-content" id="dropSpoiler"><br>
+              O comando `DROP` é usado para excluir (apagar) objetos do banco de
+              dados. Isso pode ser usado para remover tabelas, índices, visões
+              ou qualquer outro objeto que não seja mais necessário ou desejado
+              no banco de dados.<br><br>
+              Exemplo<br>
+              DROP TABLE &lt;tabela><br>
+              Exluir tabela existente
+            </div>
+
+          </ul>
+        </div>
+
+        <button onclick="toggleSpoiler('spoiler2')">DML</button>
+        <div class="spoiler-content" id="spoiler2">Conteúdo do Spoiler 2</div>
+
+        <button onclick="toggleSpoiler('spoiler3')">DCL</button>
+        <div class="spoiler-content" id="spoiler3">Conteúdo do Spoiler 3</div>
+
+        <button onclick="toggleSpoiler('spoiler5')">DTL</button>
+        <div class="spoiler-content" id="spoiler5">Conteúdo do Spoiler 5</div>
+      </div>
+      <div id="rgt">
+        <!-- Conteúdo da direita -->
+      </div>
+    </div>
+    <div class="footer">
+      <!-- Rodapé -->
+    </div>
+
+    <script>
+      function toggleSpoiler(spoilerId) {
+        var spoiler = document.getElementById(spoilerId);
+        if (spoiler.style.display === "none" || spoiler.style.display === "") {
+          spoiler.style.display = "block";
+        } else {
+          spoiler.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
