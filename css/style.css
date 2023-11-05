@@ -245,15 +245,17 @@ body {
 .footer .credit a:hover {
   text-decoration: none;
 }
+
+/* Adicione essas regras ao seu CSS */
 /* Estilo para a caixa de contato */
 .form-container {
-  background-color: #fff; 
+  background-color: #fff; /* Cor de fundo para destacar o formulário */
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 70%; 
-  margin: 0 auto; 
-  margin-top: 20px; 
+  width: 70%; /* Ajuste a largura de acordo com suas necessidades */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-top: 20px; /* Espaço acima do formulário */
 }
 
 /* Estilo para os campos do formulário */
@@ -274,4 +276,11 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Estilo para o link "banco de dados" */
+a.link-destacado {
+  text-decoration: underline !important;
+  color: #fff !important; /* Defina a cor desejada */
+  font-weight: bold !important; /* Se desejar torná-lo em negrito */
 }
