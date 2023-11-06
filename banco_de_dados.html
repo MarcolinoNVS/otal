@@ -83,10 +83,31 @@
               propriedades dos objetos que serão usados para armazenar e
               gerenciar dados.<br /><br />Exemplo<br />
               <br />
-              CREATE DATABASE &lt;nome_do_banco<br />
-              CREATE TABLE &lt;tabela> ( &lt;campo1> &lt;tipo>, [...,
-              &lt;campon> &lt;tipo>] PRIMARY KEY &lt;coluna> FOREIGN KEY
-              &lt;coluna> REFERENCES &lt;tabela_ref>(&lt;coluna_ref>) )
+              <table border="1">
+                <tr>
+                  <th>Comando SQL</th>
+                  <th>Descrição</th>
+                </tr>
+                <tr>
+                  <td>CREATE DATABASE &lt;nome_do_banco>;</td>
+                  <td>Cria um novo banco de dados com o nome especificado.</td>
+                </tr>
+                <tr>
+                  <td>
+                    CREATE TABLE &lt;tabela> (<br />
+                    &nbsp;&nbsp;&lt;campo1> &lt;tipo>,<br />
+                    &nbsp;&nbsp;[..., &lt;campon> &lt;tipo>] PRIMARY KEY
+                    &lt;coluna> FOREIGN KEY &lt;coluna> REFERENCES
+                    &lt;tabela_ref>(&lt;coluna_ref>));<br />
+                  </td>
+                  <td>
+                    Cria uma tabela com os campos especificados. Define uma
+                    chave primária (<code>PRIMARY KEY</code>) e uma chave
+                    estrangeira (<code>FOREIGN KEY</code>).
+                  </td>
+                </tr>
+              </table>
+
               <br /><br />
               PRIMARY KEY: Restrição de chave primária FOREIGN KEY: Restrição de
               chave estrangeira Tipos de Domínios Básicos: char(n), varchar(n),
@@ -146,12 +167,43 @@
               modificar colunas em uma tabela, alterar as propriedades de uma
               visão ou procedimento armazenado, entre outras ações.<br /><br />
               Exemplo<br /><br />
-              ALTER TABLE &lt;tabela> ADD &lt;coluna>&lt;tipo> <br />
-              ALTER TABLE &lt;tabela> DROP &lt;coluna>&lt;/coluna><br />
-              Adicionar/remover nova coluna <br />
-              Exemplos<br />
-              ALTER TABLE cliente_particular ADD email varchar(255)<br />
-              ALTER TABLE cliente_particular DROP email<br /><br />
+              <table border="1">
+                <tr>
+                  <th>Comando SQL</th>
+                  <th>Descrição</th>
+                </tr>
+                <tr>
+                  <td>ALTER TABLE &lt;tabela> ADD &lt;coluna> &lt;tipo>;</td>
+                  <td>
+                    Adiciona uma nova coluna à tabela especificada com o tipo de
+                    dados especificado.
+                  </td>
+                </tr>
+                <tr>
+                  <td>ALTER TABLE &lt;tabela> DROP &lt;coluna>;</td>
+                  <td>Remove uma coluna específica da tabela.</td>
+                </tr>
+                <tr>
+                  <td>Exemplos</td>
+                  <td>Alguns exemplos de uso dos comandos SQL.</td>
+                </tr>
+                <tr>
+                  <td>
+                    ALTER TABLE cliente_particular ADD email varchar(255);
+                  </td>
+                  <td>
+                    Adiciona uma coluna chamada "email" à tabela
+                    "cliente_particular" com o tipo de dados "varchar(255)".
+                  </td>
+                </tr>
+                <tr>
+                  <td>ALTER TABLE cliente_particular DROP email;</td>
+                  <td>
+                    Remove a coluna "email" da tabela "cliente_particular".
+                  </td>
+                </tr>
+              </table>
+              <br /><br />
             </div>
 
             <button onclick="toggleSpoiler('dropSpoiler')">DROP</button>
@@ -229,7 +281,7 @@
             predicado especificado seja verdadeiro
             <br /><br />
             UPDATE & tabela> SET &lt;ampo1> = &lt;valor1> [, ..., &lt;campon>
-            vvalorn>] WHERE vcondição><br />
+            vvalorn>] WHERE &el;condição><br />
             <br />
             ● Exemplo: UPDATE cliente SET nome = ‘Doris’ WHERE id = ‘93’<br />
             ● Uma atualização no valor da chave primária pode propagar-se
@@ -297,7 +349,7 @@
             Select - Projeção<br /><br />
             Selecionar as marcas e modelos de táxi<br /><br />
             <img
-              src="bancodedados/Select1.png"
+              src="bancodedados/select1.png"
               alt="Select - Projeção"
               width="1040"
               height="364"
@@ -328,10 +380,130 @@
         </div>
 
         <button onclick="toggleSpoiler('spoiler3')">DCL</button>
-        <div class="spoiler-content" id="spoiler3">Conteúdo do Spoiler 3</div>
+        <div class="spoiler-content" id="spoiler3">
+          <br />
+          Linguagem de Controle de Dados (DCL) em Bancos de Dados<br /><br />
+          A Linguagem de Controle de Dados (DCL) é uma parte essencial da
+          linguagem SQL (Structured Query Language) que se concentra no
+          gerenciamento de permissões, privilégios e controle de acesso em
+          bancos de dados. Essa linguagem desempenha um papel fundamental na
+          segurança e integridade dos dados armazenados em sistemas de
+          gerenciamento de banco de dados (DBMS). Vamos explorar como a DCL é
+          usada para gerenciar aspectos de controle de acesso entre usuários e
+          dados no banco de dados.<br /><br />
+          Conceito Básico<br /><br />
+          Em essência, a DCL permite aos administradores de banco de dados
+          controlar quem pode acessar, modificar e excluir informações
+          específicas no banco de dados. Ela define quem tem permissões para
+          executar ações como SELECT (recuperar dados), INSERT (inserir dados),
+          UPDATE (atualizar dados) e DELETE (excluir dados) em tabelas ou
+          objetos dentro do banco de dados.<br /><br />
+          Principais Instruções DCL<br />
+          Existem duas instruções principais na DCL:<br /><br />
+          GRANT (Conceder): A instrução GRANT é usada para conceder permissões
+          ou privilégios a usuários ou funções específicas. Por meio do GRANT,
+          os administradores podem determinar quais operações um usuário ou
+          função tem permissão para executar em objetos do banco de dados.<br /><br />
+          Exemplo de GRANT:<br />
+          <table border="1">
+            <tr>
+              <th>SQL</th>
+            </tr>
+            <tr>
+              <td>
+                GRANT SELECT, INSERT, UPDATE ON tabela_exemplo TO usuario1;
+              </td>
+            </tr>
+            <tr></tr>
+          </table>
+          <br /><br />
+          REVOKE (Revogar): A instrução REVOKE é usada para retirar permissões
+          previamente concedidas. Isso permite que os administradores restrinjam
+          ou removam o acesso a operações específicas em tabelas ou objetos do
+          banco de dados.<br /><br />
+          Exemplo de REVOKE:
+          <table border="1">
+            <tr>
+              <th>SQL</th>
+            </tr>
+            <tr>
+              <td>REVOKE SELECT ON tabela_exemplo FROM usuario1;</td>
+            </tr>
+            <tr></tr>
+          </table>
+          <br /><br />
+          Importância do DCL<br /><br />
+          O uso adequado da DCL é crucial para manter a segurança e a
+          integridade dos dados em um banco de dados. Com o controle de acesso,
+          é possível garantir que apenas usuários autorizados possam realizar
+          ações específicas. Isso ajuda a prevenir erros acidentais e
+          intencionais que possam comprometer a integridade dos dados.<br /><br />
+          Recomendações de Uso<br />
+          Aqui estão algumas recomendações importantes ao trabalhar com a
+          DCL:<br /><br />
+          Princípio do Privilégio Mínimo: Conceda apenas os privilégios
+          necessários para que os usuários realizem suas tarefas. Evite conceder
+          permissões em excesso, pois isso pode aumentar os riscos de
+          segurança.<br /><br />
+          Monitoramento e Auditoria: Mantenha um registro das concessões e
+          revogações de permissões. Isso permite rastrear quem tem acesso a
+          quais dados e quando as alterações ocorreram.<br /><br />
+          Revisões Periódicas: Periodicamente, revise as permissões concedidas
+          para garantir que estejam alinhadas com as necessidades do usuário e
+          as políticas de segurança.<br /><br />
+        </div>
 
         <button onclick="toggleSpoiler('spoiler5')">DTL</button>
-        <div class="spoiler-content" id="spoiler5">Conteúdo do Spoiler 5</div>
+        <div class="spoiler-content" id="spoiler5">
+          <br />
+          Linguagem de Transação de Dados (DTL)<br /><br />
+          A Linguagem de Transação de Dados (DTL) desempenha um papel crucial na
+          gestão de transações em sistemas de gerenciamento de bancos de dados
+          (SGBDs). As transações são unidades de trabalho que envolvem uma série
+          de operações de banco de dados. A DTL fornece os mecanismos
+          necessários para garantir que as transações sejam executadas de forma
+          consistente e confiável, mesmo em cenários de falha.<br /><br />
+          Princípios Fundamentais das Transações<br /><br />As transações de
+          dados seguem quatro propriedades ACID, que garantem a integridade e a
+          confiabilidade dos dados:<br /><br />
+          Atomicidade: Isso significa que uma transação é uma operação única e
+          indivisível. Ou seja, todas as operações em uma transação são
+          concluídas com sucesso ou nenhuma delas é executada. Isso garante que
+          o banco de dados permaneça em um estado consistente.<br /><br />
+          Consistência: As transações devem levar o banco de dados de um estado
+          consistente para outro. Isso implica que todas as regras de
+          integridade do banco de dados devem ser mantidas após a conclusão da
+          transação.<br /><br />
+          Isolamento: Cada transação deve ser isolada das outras. Isso significa
+          que o resultado de uma transação não é visível para outras transações
+          até que a primeira seja concluída. Isso evita conflitos e
+          inconsistências de dados.<br /><br />
+          Durabilidade: Uma vez que uma transação é confirmada (commit), suas
+          alterações são permanentes e persistem mesmo em caso de falha do
+          sistema. Isso garante que os dados sejam seguros e confiáveis.<br /><br />
+          Comandos da DTL <br /><br />Para gerenciar transações, a DTL fornece
+          os seguintes comandos principais:<br />
+          BEGIN TRANSACTION ou BEGIN WORK: Inicia uma nova transação.<br />
+          COMMIT: Confirma a transação, tornando as alterações permanentes.<br />
+          ROLLBACK: Desfaz todas as alterações feitas durante a transação,
+          restaurando o estado anterior.<br />
+          SAVEPOINT: Cria um ponto de salvamento dentro da transação, permitindo
+          que você desfaça até esse ponto, se necessário.<br /><br />
+          Importância da DTL<br /><br />
+          A DTL desempenha um papel fundamental em aplicações críticas, como
+          sistemas de bancos, comércio eletrônico e sistemas de reserva, onde a
+          integridade e a confiabilidade dos dados são essenciais. Ela garante
+          que as transações sejam executadas de maneira segura, mesmo em
+          situações imprevistas, como falhas de hardware ou interrupções.<br /><br />
+          O entendimento da Linguagem de Transação de Dados é crucial para
+          administradores de bancos de dados, desenvolvedores e qualquer pessoa
+          que trabalhe com sistemas que envolvem interações com bancos de
+          dados.<br /><br />
+          Agora, você pode adicionar esse conteúdo à sua página da seção
+          "Linguagem de Transação de Dados (DTL)" em seu site, adaptando-o
+          conforme necessário. Certifique-se de que o estilo e a formatação se
+          ajustem ao design geral do seu site.<br />
+        </div>
       </div>
       <div id="rgt">
         <!-- Conteúdo da direita -->
