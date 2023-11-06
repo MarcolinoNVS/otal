@@ -14,24 +14,25 @@
   </head>
   <body>
     <div id="top">
-        <div class="hldr">
-          <div class="sitename">
-            <h1>
-              <span class="nameA">Back-</span><span class="nameB">end</span>
-            </h1>
-            <h6 class="tagline">Banco de Dados</h6>
-          </div>
-          <div class="nav">
-            <ul>
-              <li><a href="index.html" class="active">Inicio</a></li>
-              <li><a href="contato.html">Contatos</a></li>
-              <li><a href="#"></a></li>
-            </ul>
-          </div>
-          <div class="rss">
-          <a href="#"><img src="images/rss.gif" alt="" /></a>
+      <div class="hldr">
+        <div class="sitename">
+          <h1>
+            <span class="nameA">Back-</span><span class="nameB">end</span>
+          </h1>
+          <h6 class="tagline">Banco de Dados</h6>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="contato.html">Contatos</a></li>
+            <li><a href="#"></a></li>
+          </ul>
         </div>
       </div>
+      <div class="rss">
+        <a href="#"><img src="images/rss.gif" alt="" /></a>
+      </div>
+    </div>
     <div id="container">
       <div id="lft">
         <h1>Bancos de Dados</h1>
@@ -60,6 +61,7 @@
         <!-- Botões de spoiler -->
         <button onclick="toggleSpoiler('spoiler1')">DDL</button>
         <div class="spoiler-content" id="spoiler1">
+          <br />Definição de Dados (DDL) <br /><br />
           <ul>
             <li>Objetos</li>
             <li>Esquemas (Banco de dados)</li>
@@ -70,81 +72,260 @@
             <li>Paralelos com Modelo Relacional</li>
             <li>Tabela = Relação</li>
             <li>Linha = Tupla</li>
-            <li>Coluna = Atributo</li><br>
+            <li>Coluna = Atributo</li>
+            <br />
             <button onclick="toggleSpoiler('createSpoiler')">CREATE</button>
-            <div class="spoiler-content" id="createSpoiler"><br>
+            <div class="spoiler-content" id="createSpoiler">
+              <br />
               O comando `CREATE` é usado para criar objetos dentro de um banco
               de dados, como tabelas, índices, visões, procedimentos armazenados
               e muito mais. Ele permite que você defina a estrutura e as
               propriedades dos objetos que serão usados para armazenar e
               gerenciar dados.<br /><br />Exemplo<br />
               <br />
-              CREATE DATABASE &lt;nome_do_banco<br>
-              CREATE TABLE &lt;tabela> ( &lt;campo1> &lt;tipo>,
-                [..., &lt;campon> &lt;tipo>]
-                PRIMARY KEY &lt;coluna>
-                FOREIGN KEY &lt;coluna> REFERENCES &lt;tabela_ref>(&lt;coluna_ref>) ) <br><br>
-                PRIMARY KEY: Restrição de chave primária
-                FOREIGN KEY: Restrição de chave estrangeira
-                Tipos de Domínios Básicos: char(n), varchar(n), int, real, double, float, boolean, date, etc.
-                Outras Restrições: NOT NULL, UNIQUE, CHECK<br> <br>
-                <img src="bancodedados/bancodll1.png" alt="Sistema de taxi" width="968" height="272"> <br> <br>
-                ● Script para criação do banco Sistema de Taxi
-                <button onclick="toggleSpoiler('scriptSpoiler')">Script</button>
-                <div class="spoiler-content" id="scriptSpoiler"><br>CREATE DATABASE sistema_taxi USE sistema_taxi<br><br>
-                    CREATE TABLE cliente(<br> id VARCHAR(4),<br> nome VARCHAR(80),<br> PRIMARY KEY(id)
-                    );<br><br>
-                    CREATE TABLE cliente_particular(<br>
-                    id VARCHAR(4),<br>
-                    cpf VARCHAR(14),<br>
-                    PRIMARY KEY(id),<br>
-                    FOREIGN KEY(id) REFERENCES cliente(id) );<br><br>
-                    CREATE TABLE cliente_empresa( id VARCHAR(4),<br>
-                    cnpj VARCHAR(18),<br>
-                    PRIMARY KEY(id),<br>
-                    FOREIGN KEY(id) REFERENCES cliente(id) );<br><br>
-                    CREATE TABLE taxi (<br> placa VARCHAR(7),<br> marca VARCHAR(30),<br> modelo VARCHAR(30),<br> anofab INTEGER,<br> PRIMARY KEY(placa)<br>
-                    );<br><br>
-                    CREATE TABLE corrida (<br>
-                    cliid VARCHAR(4),<br>
-                    placa VARCHAR(7),<br>
-                    dataPedido DATE,<br>
-                    PRIMARY KEY(cliid,<br> placa, dataPedido),<br> FOREIGN KEY(cliid) REFERENCES cliente(id),<br> FOREIGN KEY(placa) REFERENCES taxi(placa)</div>
+              CREATE DATABASE &lt;nome_do_banco<br />
+              CREATE TABLE &lt;tabela> ( &lt;campo1> &lt;tipo>, [...,
+              &lt;campon> &lt;tipo>] PRIMARY KEY &lt;coluna> FOREIGN KEY
+              &lt;coluna> REFERENCES &lt;tabela_ref>(&lt;coluna_ref>) )
+              <br /><br />
+              PRIMARY KEY: Restrição de chave primária FOREIGN KEY: Restrição de
+              chave estrangeira Tipos de Domínios Básicos: char(n), varchar(n),
+              int, real, double, float, boolean, date, etc. Outras Restrições:
+              NOT NULL, UNIQUE, CHECK<br />
+              <br />
+              <img
+                src="bancodedados/bancodll1.png"
+                alt="Sistema de taxi"
+                width="968"
+                height="272"
+              />
+              <br />
+              <br />
+              ● Script para criação do banco Sistema de Taxi
+              <button onclick="toggleSpoiler('scriptSpoiler')">Script</button>
+              <div class="spoiler-content" id="scriptSpoiler">
+                <br />CREATE DATABASE sistema_taxi USE sistema_taxi<br /><br />
+                CREATE TABLE cliente(<br />
+                id VARCHAR(4),<br />
+                nome VARCHAR(80),<br />
+                PRIMARY KEY(id) );<br /><br />
+                CREATE TABLE cliente_particular(<br />
+                id VARCHAR(4),<br />
+                cpf VARCHAR(14),<br />
+                PRIMARY KEY(id),<br />
+                FOREIGN KEY(id) REFERENCES cliente(id) );<br /><br />
+                CREATE TABLE cliente_empresa( id VARCHAR(4),<br />
+                cnpj VARCHAR(18),<br />
+                PRIMARY KEY(id),<br />
+                FOREIGN KEY(id) REFERENCES cliente(id) );<br /><br />
+                CREATE TABLE taxi (<br />
+                placa VARCHAR(7),<br />
+                marca VARCHAR(30),<br />
+                modelo VARCHAR(30),<br />
+                anofab INTEGER,<br />
+                PRIMARY KEY(placa)<br />
+                );<br /><br />
+                CREATE TABLE corrida (<br />
+                cliid VARCHAR(4),<br />
+                placa VARCHAR(7),<br />
+                dataPedido DATE,<br />
+                PRIMARY KEY(cliid,<br />
+                placa, dataPedido),<br />
+                FOREIGN KEY(cliid) REFERENCES cliente(id),<br />
+                FOREIGN KEY(placa) REFERENCES taxi(placa)
+              </div>
 
-                    <br><br><br><br>
+              <br /><br /><br /><br />
             </div>
 
             <button onclick="toggleSpoiler('alterSpoiler')">ALTER</button>
-            <div class="spoiler-content" id="alterSpoiler"><br>
+            <div class="spoiler-content" id="alterSpoiler">
+              <br />
               O comando `ALTER` é usado para fazer alterações em objetos que já
               existem no banco de dados. Isso pode incluir adicionar, remover ou
               modificar colunas em uma tabela, alterar as propriedades de uma
-              visão ou procedimento armazenado, entre outras ações.<br><br>
-              Exemplo<br><br>
-              ALTER TABLE &lt;tabela> ADD &lt;coluna>&lt;tipo> <br>
-              ALTER TABLE &lt;tabela> DROP &lt;coluna>&lt;/coluna><br>
-              Adicionar/remover nova coluna <br>
-              Exemplos<br>
-              ALTER TABLE cliente_particular ADD email varchar(255)<br> ALTER TABLE cliente_particular DROP email<br>
-              
+              visão ou procedimento armazenado, entre outras ações.<br /><br />
+              Exemplo<br /><br />
+              ALTER TABLE &lt;tabela> ADD &lt;coluna>&lt;tipo> <br />
+              ALTER TABLE &lt;tabela> DROP &lt;coluna>&lt;/coluna><br />
+              Adicionar/remover nova coluna <br />
+              Exemplos<br />
+              ALTER TABLE cliente_particular ADD email varchar(255)<br />
+              ALTER TABLE cliente_particular DROP email<br /><br />
             </div>
 
             <button onclick="toggleSpoiler('dropSpoiler')">DROP</button>
-            <div class="spoiler-content" id="dropSpoiler"><br>
+            <div class="spoiler-content" id="dropSpoiler">
+              <br />
               O comando `DROP` é usado para excluir (apagar) objetos do banco de
               dados. Isso pode ser usado para remover tabelas, índices, visões
               ou qualquer outro objeto que não seja mais necessário ou desejado
-              no banco de dados.<br><br>
-              Exemplo<br>
-              DROP TABLE &lt;tabela><br>
+              no banco de dados.<br /><br />
+              Exemplo<br />
+              DROP TABLE &lt;tabela><br />
               Exluir tabela existente
             </div>
-
           </ul>
         </div>
 
         <button onclick="toggleSpoiler('spoiler2')">DML</button>
-        <div class="spoiler-content" id="spoiler2">Conteúdo do Spoiler 2</div>
+        <div class="spoiler-content" id="spoiler2">
+          <br />Manipulação de Dados (DML)<br /><br />
+          <button onclick="toggleSpoiler('insertButton')">
+            Inserir Registros (INSERT)
+          </button>
+          <button onclick="toggleSpoiler('updateButton')">
+            Atualizar Registros (UPDATE)
+          </button>
+          <button onclick="toggleSpoiler('deleteButton')">
+            Remover Registros (DELETE)
+          </button>
+          <button onclick="toggleSpoiler('selectButton')">
+            Realizar Consultas (SELECT)
+          </button>
+
+          <div class="spoiler-content" id="insertButton">
+            <br />
+            Inserir Registros (INSERT)
+            <br /><br />
+            A operação INSERT é utilizada para adicionar novos registros ou
+            linhas a uma tabela em um banco de dados. Os novos registros contêm
+            informações específicas que são fornecidas, e eles são adicionados
+            sem afetar as informações existentes. Essa operação é fundamental
+            para a inclusão de novos dados no banco de dados.<br /><br />
+            ● Script para popular banco Sistema de Taxi
+            <br /><br />
+            INSERT INTO cliente VALUES<br />
+            ('1755', 'Doriana'),<br />
+            ('93','DinoTech'),<br />
+            ('1532','Asdrúbal'),<br />
+            ('1780','Quincas'), ('97','Proj');<br />
+            INSERT INTO cliente_particular VALUES<br />
+            ('1755', '567.387.387-44'),<br />
+            ('1532', '448.754.253-44'),<br />
+            ('1780', '576.456.123-55');<br />
+            INSERT INTO cliente_empresa VALUES ('93', '58.443.828/0001-02'),
+            ('97', '44.876.234/7789-10');<br />
+            INSERT INTO taxi VALUES<br />
+            ('DAE6534','Ford','Fiesta',1999),<br />
+            ('DKL4598','Wolksvagen','Gol',2001),<br />
+            ('DKL7878','Ford','Fiesta',2001),<br />
+            ('JDM8776','Wolksvagen','Santana',2002),<br />
+            ('JJM3692','Chevrolet','Corsa',1999);<br />
+            INSERT INTO corrida VALUES ('1755', 'DAE6534', '2003-02-15'), ('97',
+            'JDM8776', '2003-02-18');<<br /><br /><br /><br />
+          </div>
+
+          <div class="spoiler-content" id="updateButton">
+            <br />
+            Atualizar Registros (UPDATE)
+            <br /><br />
+            A operação UPDATE é empregada para modificar registros existentes em
+            uma tabela de banco de dados. Isso permite a atualização de
+            informações em uma ou várias colunas de um registro sem
+            necessariamente alterar sua identificação única. O UPDATE é útil
+            para manter os dados precisos e atualizados.<br /><br />
+            ● Modifica os valores dos atributos das linhas da tabela em que o
+            predicado especificado seja verdadeiro
+            <br /><br />
+            UPDATE & tabela> SET &lt;ampo1> = &lt;valor1> [, ..., &lt;campon>
+            vvalorn>] WHERE vcondição><br />
+            <br />
+            ● Exemplo: UPDATE cliente SET nome = ‘Doris’ WHERE id = ‘93’<br />
+            ● Uma atualização no valor da chave primária pode propagar-se
+            dependendo de como a restrição de chave estrangeira foi criada.
+            <br /><br /><br /><br />
+          </div>
+
+          <div class="spoiler-content" id="deleteButton">
+            <br />
+            Remover Registros (DELETE)
+            <br /><br />
+            A operação DELETE é usada para excluir registros de uma tabela. Isso
+            permite a remoção permanente de dados específicos que não são mais
+            necessários ou desejados. É importante usá-la com cautela, pois a
+            exclusão de registros é irreversível.<br /><br />
+            ● DELETEFROM&lt;tabela>WHERE&lt;condição>
+            <br /><br />
+            ● Exemplo: DELETE FROM corrida WHERE placa = ‘DAE0534’ <br />
+            ● Exclui todos os registros da tabela em que o predicado
+            especificado seja verdadeiro<br />
+            ● A exclusão não pode violar as restrições de integridade
+            referencial (chave estrangeira) <br />● Alguns SGBDs permitem
+            exclusõe sem cascata
+          </div>
+
+          <div class="spoiler-content" id="selectButton">
+            <br />
+            Realizar Consultas (SELECT)
+            <br /><br />
+            A operação SELECT é empregada para recuperar informações de um banco
+            de dados. Ela permite que você especifique critérios de pesquisa e
+            obtenha resultados com base nessas condições. Essa operação é
+            fundamental para consultar, filtrar e recuperar dados específicos de
+            uma tabela, proporcionando insights e informações relevantes.<br /><br />
+            ● Consulta os dados presentes no banco <br />● Estrtura básica:<br /><br />
+            SELECT &lt;lista de atributos>]<br />
+            FROM &lt;lista de tabeas>]<br />
+            WHERE &lt;condição><br /><br />
+            • Lista de atributos: nomes dos atributos a serem recuperados pela
+            connsulta<br />- Quando a lista de atributos envolver todos os
+            atributos da relação, pode-se usar *<br />
+            • Lista de tabelas: nomes das tabelas envolvidas no processamento da
+            consulta <br />– Mais de uma tabela -> produto cartesiano ou
+            junção<br /><br />
+            SELECT &lt;lista de atributos>]<br />
+            FROM &lt;lista de tabeas>]<br />
+            WHERE &lt;condição><br /><br />
+            • Condição: expressão booleana que identifca as linhas a serem
+            recuperadas pela consulta<br />
+            – pode conter:<br />• Conectivos logicos: AND, OR, NOT<br />
+            • Operadores de comparação: &lt; ,&lt;=, > ,>= , = , &lt;> <br />•
+            Comparador de string: LIKE. Usado de duas maneiras:<br />
+            – LIKE ‘%&lt;parte da string>%’<br />
+            – LIKE ‘_ _ _ &lt;parte da string> _ _ _’<br /><br />
+            <br /><br />Select x Álgebra Relacional<br /><br />
+            <img
+              src="bancodedados/select.png"
+              alt="Select x Álgebra Relacional"
+              width="1040"
+              height="364"
+            /><br /><br />
+            ● Diferentemente da Álgebra, o SELECT não elimina repetições do
+            resultado. É necessário forçar usando a palavra-chave DISTINCT.
+            Exemplo: <br />● SELECTDISTINCT&lt;atributtos>FROM&el;ltabelas><br /><br />
+            Select - Projeção<br /><br />
+            Selecionar as marcas e modelos de táxi<br /><br />
+            <img
+              src="bancodedados/select1.png"
+              alt="Select - Projeção"
+              width="1040"
+              height="364"
+            /><br /><br />
+            SELECT marca, modelo FROM taxi<br /><br />
+            <img
+              src="bancodedados/select3.png"
+              alt="Select - Projeção"
+              width="414"
+              height="283"
+            /><br /><br />
+            Selecionar os táxis fabricados após o ano 2000<br /><br />
+            <img
+              src="bancodedados/select4.png"
+              alt="Select - Projeção"
+              width="1040"
+              height="364"
+            /><br /><br />
+            SELECT * FROM Taxi WHERE anofab > 2000<br /><br />
+            <img
+              src="bancodedados/select5.png"
+              alt="Select - Projeção"
+              width="1040"
+              height="364"
+            /><br /><br />
+          </div>
+          <br /><br /><br /><br />
+        </div>
 
         <button onclick="toggleSpoiler('spoiler3')">DCL</button>
         <div class="spoiler-content" id="spoiler3">Conteúdo do Spoiler 3</div>
@@ -157,26 +338,8 @@
       </div>
     </div>
     <div class="footer">
-        <span class="copyright">Copyright &copy;Marcolino</span
-        ><span class="credit"
-          >Criado por
-          <a href="index.html"
-            ><a href="https://www.instagram.com/marcolino.simpsons/">
-              <img
-                src="images/instagram.jpg"
-                alt="Instagram"
-                width="13"
-                height="13"
-              />
-            </a>
-            <a href="https://www.linkedin.com/in/marcos-braga-792863136/">
-              <img
-                src="images/linked.png"
-                alt="Linkedin"
-                width="13"
-                height="13"
-              /> </a></a
-        ></span>
+      <span class="copyright">Copyright &copy;Marcolino</span
+      ><span class="credit"></span>
     </div>
 
     <script>
