@@ -197,11 +197,11 @@ body {
   margin: 0;
   padding: 5px 0 0 25px;
 }
-#categories .clmn {
+/*#categories .clmn {
   width: 213px;
   padding-left: 25px;
   float: left;
-}
+}*/
 #categories .clmn h3 {
   font-size: 11px;
   color: #fff;
@@ -284,3 +284,39 @@ a.link-destacado {
   color: #fff !important; /* Defina a cor desejada */
   font-weight: bold !important; /* Se desejar torná-lo em negrito */
 }
+
+#categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#categories .clmn {
+  flex: 1 1 30%; /* Ajusta a largura dos elementos */
+  margin: 10px; /* Espaçamento entre os elementos */
+}
+
+#categories .primeiro {
+  order: 1;
+}
+
+#categories .quarto {
+  order: 2;
+  flex: 100%; /* O quarto semestre ocupa a linha toda */
+}
+
+#categories .segundo {
+  order: 3;
+}
+
+#categories .terceiro {
+  order: 4;
+}
+p {
+  max-width: 500px; /* Ajuste a largura conforme necessário */
+  word-wrap: break-word; /* Quebra as palavras automaticamente, se necessário */
+}
+#categories .clmn ul li {
+  max-width: 250px; /* Defina a largura máxima desejada */
+  word-wrap: break-word; /* Garante a quebra de palavras longas */
+}
+
